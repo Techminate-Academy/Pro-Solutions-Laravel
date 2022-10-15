@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class DeletedRecord extends Model
 {
     use HasFactory;
+
+    protected $table = 'deleted_records';
+
+    protected $guarded=[];
 }
