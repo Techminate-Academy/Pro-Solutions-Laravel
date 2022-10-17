@@ -18,6 +18,7 @@ class SubcategorySeeder extends Seeder
         DB::table('sub_categories')->insert([
             'name' => 'Electric',
             'category_id' => '1',
+            'is_active' => 1,
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -25,6 +26,7 @@ class SubcategorySeeder extends Seeder
         DB::table('sub_categories')->insert([
             'name' => 'Acoustic',
             'category_id' => '1',
+            'is_active' => 1,
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -32,6 +34,7 @@ class SubcategorySeeder extends Seeder
         DB::table('sub_categories')->insert([
             'name' => 'Freatless',
             'category_id' => '2',
+            'is_active' => 1,
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -39,6 +42,7 @@ class SubcategorySeeder extends Seeder
         DB::table('sub_categories')->insert([
             'name' => 'Electric',
             'category_id' => '2',
+            'is_active' => 1,
             'created_at' => now(),
             'updated_at' => now()
         ]);

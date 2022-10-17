@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
             $table->string('name');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

@@ -32,8 +32,11 @@ class CategoryController extends Controller
 
             foreach($subCategories as $subCategory){
                 $subCategory->category_id = $newCategory->id;
+                $subCategory->is_active = 1;
                 $subCategory->save();
             }
+
+            $dataExist->delete();
 
             return response([
                 "message"=>'Data has created and related forign keys are replaced.',
@@ -57,8 +60,14 @@ class CategoryController extends Controller
                 'table_name' => 'categories',
                 'record_str' => $dataExist->name
             ];
-    
             $success = DeletedRecord::create($data);
+
+            $subCategories = SubCategory::where('category_id', $dataExist->id)->get();
+
+            foreach($subCategories as $subCategory){
+                $subCategory->is_active = 0;
+                $subCategory->save();
+            }
     
             $dataExist->delete();
 
